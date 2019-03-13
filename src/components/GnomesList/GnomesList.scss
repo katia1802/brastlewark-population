@@ -1,0 +1,42 @@
+.gnome__list{
+    list-style-type: none;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 25%);
+    grid-gap: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.gnome{
+    background-color: #FFF8EE;
+    border-radius: 5%;
+    width: 500px;
+    height: 300px;
+    &:hover {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+        0 10px 10px rgba(0,0,0,0.22);
+      }
+    //   .siblingFade span {
+    //     padding: 0 1rem;
+    //     transition: opacity 0.2s;
+    // }
+    // .siblingFade:hover span:not(:hover) {
+    //     opacity: 0.5;
+    // }
+}
+.gnome__image {
+    width: 235px;
+    height: 235px;
+    float: right;
+}
+
+.gnome__details{
+    display:flex;
+    justify-content: space-around;
+    margin-left: 5px;
+    margin-bottom: 0px;
+}
+
+.gnome__lists{
+    display: flex;
+}
