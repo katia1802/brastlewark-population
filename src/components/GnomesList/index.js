@@ -1,40 +1,27 @@
 import React, { Component } from "react";
 import "./GnomesList.scss";
+import Gnome from '../Gnome'
 
 class GnomesList extends Component {
   render() {
-    const { gnomesRawData } = this.props;
+    const { gnomesResults } = this.props;
 
     return (
       <ul className="gnome__list">
-        {gnomesRawData.map((item, index) => {
+        {gnomesResults.map((item, index) => {
           return (
             <li className="gnome glowButton" key={index}>
-              <h2 className="gnome__name">{item.name}</h2>
-              <img
-                className="gnome__image"
-                src={item.thumbnail}
-                alt={item.name}
+
+              <Gnome 
+              name = {item.name}
+              image = {item.thumbnail}
+              professions = {item.professions}
+              friends = {item.friends}
+              age = {item.age}
+              height= {item.height}
+              hair_color={item.hair_color}
               />
-              <div className="gnome__lists">
-                <ul>
-                  Professions:{" "}
-                  {item.professions.map((profession, index) => {
-                    return <li key={index}>{profession}</li>;
-                  })}
-                </ul>
-                <ul>
-                  Friends:{" "}
-                  {item.friends.map((friend, index) => {
-                    return <li key={index}>{friend}</li>;
-                  })}
-                </ul>
-              </div>
-              <div className="gnome__details">
-                <p>{item.age}</p>
-                <p>{item.height}</p>
-                <p>{item.hair_color}</p>
-              </div>
+
 
             </li>
           );

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { createPromise } from "./services/gnomeService";
-import GnomesList from './components/GnomesList'
+import GnomesList from "./components/GnomesList";
+import Filter from "./components/Filter";
 import "./App.scss";
 
 class App extends Component {
@@ -8,24 +9,76 @@ class App extends Component {
     super(props);
 
     this.state = {
-      gnomesRawData: []
+      gnomesRawData: [],
+      search: ""
     };
+    this.getInputSearch = this.getInputSearch.bind(this);
+    this.filterByFullName();
   }
 
   componentDidMount() {
     createPromise().then(data => {
+      const rawData = data.Brastlewark;
       this.setState({
-        gnomesRawData: data.Brastlewark
+        gnomesRawData: rawData
       });
+      this.saveData(rawData);
     });
   }
 
+  getSaveData() {
+    const allRawData = localStorage.getItem("allRawData");
+
+    if (allRawData !== null) {
+      return JSON.parse(allRawData);
+    } else {
+      this.componentDidMount();
+    }
+  }
+
+  saveData(data) {
+    localStorage.setItem("allRawData", JSON.stringify(data));
+  }
+
+  getInputSearch(event) {
+    const userSearch = event.currentTarget.value;
+    this.setState({
+      search: userSearch
+    });
+  }
+
+  filterByFullName() {
+    const filteredGnomes = this.state.gnomesRawData.filter(gnome => {
+      const gnomeName = gnome.name;
+      if (
+        gnomeName
+          .toLocaleLowerCase()
+          .includes(this.state.search.toLocaleLowerCase())
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    return filteredGnomes;
+  }
+
   render() {
-    console.log ('holi', this.state.gnomesRawData)
+    const gnomesResults = this.filterByFullName();
+
     return (
-      <div className="App">
-        <GnomesList 
-        gnomesRawData={this.state.gnomesRawData} />
+      <div>
+        <header>
+          <Filter
+            onKeySearch={this.getInputSearch}
+            userSearch={this.state.search}
+          />
+        </header>
+        <main>
+          <div className="App">
+            <GnomesList gnomesResults={gnomesResults} />
+          </div>
+        </main>
       </div>
     );
   }
