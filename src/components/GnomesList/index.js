@@ -9,7 +9,7 @@ class GnomesList extends Component {
       <ul className="gnome__list">
         {gnomesRawData.map((item, index) => {
           return (
-            <li className="gnome" key={index}>
+            <li className="gnome glowButton" key={index}>
               <h2 className="gnome__name">{item.name}</h2>
               <img
                 className="gnome__image"

@@ -5,6 +5,7 @@
     grid-template-columns: repeat(3, 25%);
     grid-gap: 30px;
     font-family: 'Open Sans', sans-serif;
+        
 }
 
 .gnome{
@@ -15,15 +16,21 @@
     &:hover {
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
         0 10px 10px rgba(0,0,0,0.22);
-      }
-    //   .siblingFade span {
-    //     padding: 0 1rem;
-    //     transition: opacity 0.2s;
-    // }
-    // .siblingFade:hover span:not(:hover) {
-    //     opacity: 0.5;
-    // }
+      }    
 }
+
+.glowButton {
+    height: 300px;
+    padding: 0 14px;
+    transition: all .3s ease;
+}
+
+.glowButton:hover {
+    background: #FFC75F;
+    border-color: #FFC75F;
+    box-shadow: 0 0 25px 1px white;
+}
+
 .gnome__image {
     width: 235px;
     height: 235px;
