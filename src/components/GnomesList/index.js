@@ -5,8 +5,12 @@ import Gnome from '../Gnome'
 class GnomesList extends Component {
   render() {
     const { gnomesResults } = this.props;
+    if (gnomesResults.length===0){
+      return <p>No gnome found</p>
+    }else{
 
     return (
+
       <ul className="gnome__list">
         {gnomesResults.map((item, index) => {
           return (
@@ -19,6 +23,7 @@ class GnomesList extends Component {
               friends = {item.friends}
               age = {item.age}
               height= {item.height}
+              weight = {item.weight}
               hair_color={item.hair_color}
               />
 
@@ -27,7 +32,7 @@ class GnomesList extends Component {
           );
         })}
       </ul>
-    );
+    )};
   }
 }
 

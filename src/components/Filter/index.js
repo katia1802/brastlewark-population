@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import './Filter.scss'
 
 class Filter extends Component {
     render() { 
         const {onKeySearch, userSearch} =this.props
         return (
-            <div>
+            <div className="app__filter-item">
                 <input
-                placeholder="search your Gnome"
+                className="app__filter-fullname"
+                placeholder="Search your gnome "
                 type="text"
                 onChange={onKeySearch}
                 value={userSearch}
@@ -15,5 +17,7 @@ class Filter extends Component {
           );
     }
 }
+
+
  
 export default Filter;
