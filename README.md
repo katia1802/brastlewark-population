@@ -15,6 +15,6 @@ Now you can:
 $ git clone https://github.com/katia1802/brastlewark-population.git
 2) Open your terminal
 3) Install the dependencies by running $ npm install / $ yarn install.
-5) $ npm audit fix
-5) Open http://localhost:3000 to view it in the browser.
-6) Start searching for your gnome! :)
+5) $ npm audit fix 
+6) Open http://localhost:3000 to view it in the browser using $npm start.
+7) Start searching for your gnome! :)
