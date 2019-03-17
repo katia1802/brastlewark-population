@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import { createPromise } from "./services/gnomeService";
 import GnomesList from "./components/GnomesList";
 import Filter from "./components/Filter";
+import Loader from "./components/Loader";
 import "./App.scss";
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCity } from '@fortawesome/free-solid-svg-icons'
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCity } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faCity)
+library.add(faCity);
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +16,8 @@ class App extends Component {
 
     this.state = {
       gnomesRawData: [],
-      search: ""
+      search: "",
+      isLoading: true
     };
     this.getInputSearch = this.getInputSearch.bind(this);
     this.filterByFullName();
@@ -24,9 +26,15 @@ class App extends Component {
   componentDidMount() {
     createPromise().then(data => {
       const rawData = data.Brastlewark;
-      this.setState({
-        gnomesRawData: rawData
-      });
+
+      setTimeout(
+        () =>
+          this.setState({
+            gnomesRawData: rawData,
+            isLoading: false
+          }),
+        2000
+      );
       this.saveData(rawData);
     });
   }
@@ -72,8 +80,11 @@ class App extends Component {
     const gnomesResults = this.filterByFullName();
 
     return (
-      <div>
-        <h1 className="app__header"><FontAwesomeIcon icon="city"/>  Brastlewark Census Data  <FontAwesomeIcon icon="city"/></h1>
+      <div className="app__welcoming">
+        <h1 className="app__header" >
+          <FontAwesomeIcon icon="city" /> Brastlewark Census Data{" "}
+          <FontAwesomeIcon icon="city" />
+        </h1>
         <header>
           <Filter
             onKeySearch={this.getInputSearch}
@@ -81,8 +92,12 @@ class App extends Component {
           />
         </header>
         <main>
-          <div className="App">
-            <GnomesList gnomesResults={gnomesResults} />
+          <div className="app__main">
+            {this.state.isLoading ? (
+              <Loader />
+            ) : (
+              <GnomesList gnomesResults={gnomesResults} />
+            )}
           </div>
         </main>
       </div>

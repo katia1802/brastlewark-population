@@ -2,16 +2,77 @@
     list-style-type: none;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(3, 25%);
-    grid-gap: 30px;
-    font-family: 'Open Sans', sans-serif;
-        
+    grid-template-columns: repeat(1, 100%);
+    grid-gap: 30px;        
 }
 
-.gnome{
-    background-color: #FFF8EE;
+.gnome__notfound{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.gnome__notfound-text{
+    font-size: 12px;
+}
+
+.gnome{    
+    background-color: #398B77;
     border-radius: 5%;
-    width: 500px;
+    width: 280px;
+    height: 0vh;
+    &:hover {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+        0 10px 10px rgba(0,0,0,0.22);
+      }    
+}
+
+.glowButton {
+    height: 300px;
+    padding: 0 14px;
+    transition: all .3s ease;
+}
+
+.glowButton:hover {
+    background: #FFC75F;
+    border-color: #FFC75F;
+    box-shadow: 0 0 25px 1px white;
+}
+
+.gnome__image {
+    width: 200px;
+    height: 200px;
+    border-radius: 5%;
+    float: right;
+}
+
+.gnome__details{
+    display:flex;
+    justify-content: space-around;
+    margin-left: 5px;
+    margin-bottom: 0px;
+}
+
+.gnome__lists{
+    display: flex;
+}
+
+@media all and (min-width: 1200px){
+
+.gnome__list{
+    grid-template-columns: repeat(3, 25%);
+    grid-gap: 30px;        
+}
+
+.gnome__notfound-text{
+    font-size: 32px;
+}
+
+.gnome{    
+    width: 200px;
     height: 300px;
     &:hover {
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
@@ -34,6 +95,7 @@
 .gnome__image {
     width: 200px;
     height: 200px;
+    border-radius: 5%;
     float: right;
 }
 
@@ -46,4 +108,6 @@
 
 .gnome__lists{
     display: flex;
+}
+
 }

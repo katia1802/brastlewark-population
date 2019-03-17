@@ -1,12 +1,29 @@
-.app__header{
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.app__header {
     text-align: center;
     font-size: 40px;
 }
-.App{
-    background-color: #A68D65;
+
+.app__welcoming {
+    background-image: url("./assets/cover.jpg");
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh;
+    z-index: 1;
+    background-repeat: no-repeat;
+    position: relative;
+    background-attachment: fixed;
 }
 
-.gnome__name{
+.app__main {
+    height: 100%;
+    // background-color: #C7FCEC;
+}
+
+.gnome__name {
     text-align: right;
     margin-right: 10px;
 }
