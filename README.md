@@ -11,8 +11,10 @@ $ yarn install -g create-react-app
 
 Now you can:
 
-1) Clone the repo.
-2) Install the dependencies by running $ npm install / $ yarn install.
-3) In the project directory, type $ npm start / $ yarn start to run the app in the development mode.
-4) Open http://localhost:3000 to view it in the browser.
-5) Start coding! :)
+1) Clone the repo using 
+$ git clone https://github.com/katia1802/brastlewark-population.git
+2) Open your terminal
+3) Install the dependencies by running $ npm install / $ yarn install.
+5) $ npm audit fix 
+6) Open http://localhost:3000 to view it in the browser using $npm start.
+7) Start searching for your gnome! :)
