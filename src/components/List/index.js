@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./List.scss";
 
 class List extends Component {
   render() {
@@ -6,19 +7,22 @@ class List extends Component {
 
     return (
       <div className="gnome__lists">
-        
-        <ul>
+        <div>
+        <h3 className="gnome__list-professionstitle">Professions</h3>
+        <ul className="gnome__list-professions">
           {professions.map((profession, index) => {
             return <li key={index}>{profession}</li>;
           })}
         </ul>
-
-        <ul>
+        </div>
+        <div>
+        <h3 className="gnome__list-friendstitle">Friends</h3>
+        <ul className="gnome__list-friends">
           {friends.map((friend, index) => {
             return <li key={index}>{friend}</li>;
           })}
         </ul>
-
+        </div>
       </div>
     );
   }

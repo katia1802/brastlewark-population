@@ -6,9 +6,9 @@ import Loader from "./components/Loader";
 import "./App.scss";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCity } from "@fortawesome/free-solid-svg-icons";
+import { faCity , faRuler} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faCity);
+library.add(faCity, faRuler);
 
 class App extends Component {
   constructor(props) {
@@ -82,8 +82,7 @@ class App extends Component {
     return (
       <div className="app__welcoming">
         <h1 className="app__header" >
-          <FontAwesomeIcon icon="city" /> Brastlewark Census Data{" "}
-          <FontAwesomeIcon icon="city" />
+          <FontAwesomeIcon icon="city" /> Brastlewark Census Data
         </h1>
         <header>
           <Filter

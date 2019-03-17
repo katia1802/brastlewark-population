@@ -2,8 +2,10 @@
     list-style-type: none;
     display: grid;
     grid-template-columns: repeat(1, 95%);
-    grid-gap: 30px; 
+    grid-gap: 60px; 
     justify-content: center;
+    margin-top: 30px;
+
 }
 
 .gnome__notfound{
@@ -19,8 +21,8 @@
     font-size: 12px;
 }
 
-.gnome{  
-    background-color: #C7FCEC;
+.gnome{
+    background-color: rgba(199,252,236, 0.50);
     border-radius: 5%;
     &:hover {
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
@@ -29,14 +31,13 @@
 }
 
 .glowButton {
-    // height: 300px;
     padding: 0 14px;
     transition: all .3s ease;
 }
 
 .glowButton:hover {
-    background: #FFC75F;
-    border-color: #FFC75F;
+    background: rgba(234, 236, 236, 0.72);
+    border-color: #00A984;
     box-shadow: 0 0 25px 1px white;
 }
 

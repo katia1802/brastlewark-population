@@ -1,0 +1,23 @@
+.gnome__lists {
+    display: grid;
+    grid-template-columns: repeat(2, 120px);
+    justify-content: center;
+    margin-top: 5%;
+}
+.gnome__list-professions{
+    list-style-type: none;
+    text-align: center;
+}
+
+.gnome__list-friends{
+    list-style-type: none;
+    text-align: center;
+}
+
+.gnome__list-friendstitle{
+    text-align: center; 
+}
+
+.gnome__list-professionstitle{
+    text-align: center; 
+}
