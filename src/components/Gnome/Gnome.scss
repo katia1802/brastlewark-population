@@ -17,7 +17,7 @@
 }
 
 .gnome__card {
-    height: 520px;
+    height: 580px;
 }
 
 .gnome__name {
@@ -27,7 +27,8 @@
 }
 
 .gnome__details {
+    padding: 7px;
     display: flex;
-    justify-content: space-around;
+ justify-content: space-around;
     border: solid 1px white;
 }

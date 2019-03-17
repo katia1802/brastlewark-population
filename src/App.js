@@ -4,11 +4,6 @@ import GnomesList from "./components/GnomesList";
 import Filter from "./components/Filter";
 import Loader from "./components/Loader";
 import "./App.scss";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCity , faRuler} from "@fortawesome/free-solid-svg-icons";
-
-library.add(faCity, faRuler);
 
 class App extends Component {
   constructor(props) {
@@ -81,10 +76,9 @@ class App extends Component {
 
     return (
       <div className="app__welcoming">
-        <h1 className="app__header" >
-          <FontAwesomeIcon icon="city" /> Brastlewark Census Data
-        </h1>
-        <header>
+        <header className="app__header">
+          <h1 className="app__header-title">Brastlewark Population</h1>
+
           <Filter
             onKeySearch={this.getInputSearch}
             userSearch={this.state.search}
