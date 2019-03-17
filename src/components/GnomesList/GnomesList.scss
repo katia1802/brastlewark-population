@@ -1,9 +1,9 @@
 .gnome__list{
     list-style-type: none;
     display: grid;
+    grid-template-columns: repeat(1, 95%);
+    grid-gap: 30px; 
     justify-content: center;
-    grid-template-columns: repeat(1, 100%);
-    grid-gap: 30px;        
 }
 
 .gnome__notfound{
@@ -19,11 +19,9 @@
     font-size: 12px;
 }
 
-.gnome{    
-    background-color: #398B77;
+.gnome{  
+    background-color: #C7FCEC;
     border-radius: 5%;
-    width: 280px;
-    height: 0vh;
     &:hover {
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
         0 10px 10px rgba(0,0,0,0.22);
@@ -31,7 +29,7 @@
 }
 
 .glowButton {
-    height: 300px;
+    // height: 300px;
     padding: 0 14px;
     transition: all .3s ease;
 }
@@ -42,72 +40,56 @@
     box-shadow: 0 0 25px 1px white;
 }
 
-.gnome__image {
-    width: 200px;
-    height: 200px;
-    border-radius: 5%;
-    float: right;
-}
 
-.gnome__details{
-    display:flex;
-    justify-content: space-around;
-    margin-left: 5px;
-    margin-bottom: 0px;
-}
 
-.gnome__lists{
-    display: flex;
-}
+// @media all and (min-width: 1200px){
 
-@media all and (min-width: 1200px){
+// .gnome__list{
+//     grid-template-columns: repeat(3, 25%);
+//     grid-gap: 30px;        
+// }
 
-.gnome__list{
-    grid-template-columns: repeat(3, 25%);
-    grid-gap: 30px;        
-}
+// .gnome__notfound-text{
+//     font-size: 32px;
+// }
 
-.gnome__notfound-text{
-    font-size: 32px;
-}
+// .gnome{    
+//     width: 200px;
+//     height: 300px;
+//     &:hover {
+//         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+//         0 10px 10px rgba(0,0,0,0.22);
+//       }    
+// }
 
-.gnome{    
-    width: 200px;
-    height: 300px;
-    &:hover {
-        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-        0 10px 10px rgba(0,0,0,0.22);
-      }    
-}
+// .glowButton {
+//     height: 300px;
+//     padding: 0 14px;
+//     transition: all .3s ease;
+// }
 
-.glowButton {
-    height: 300px;
-    padding: 0 14px;
-    transition: all .3s ease;
-}
+// .glowButton:hover {
+//     background: #FFC75F;
+//     border-color: #FFC75F;
+//     box-shadow: 0 0 25px 1px white;
+// }
 
-.glowButton:hover {
-    background: #FFC75F;
-    border-color: #FFC75F;
-    box-shadow: 0 0 25px 1px white;
-}
+// .gnome__image {
+//     width: 200px;
+//     height: 200px;
+//     border-radius: 5%;
+//     float: right;
+// }
 
-.gnome__image {
-    width: 200px;
-    height: 200px;
-    border-radius: 5%;
-    float: right;
-}
+// .gnome__details{
+//     display:flex;
+//     justify-content: space-around;
+//     margin-left: 5px;
+//     margin-bottom: 0px;
+// }
 
-.gnome__details{
-    display:flex;
-    justify-content: space-around;
-    margin-left: 5px;
-    margin-bottom: 0px;
-}
+// .gnome__lists{
+//     display: flex;
+// }
 
-.gnome__lists{
-    display: flex;
-}
-
-}
+// }

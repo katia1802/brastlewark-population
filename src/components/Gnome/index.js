@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import List from "../List";
 import round from 'lodash.round';
-
+import './Gnome.scss'
 
 class Gnome extends Component {
   render() {
@@ -21,20 +21,22 @@ class Gnome extends Component {
     const roundedWeight = round(weight)
 
     return (
-      <div>
+      <div className="gnome__card">
         <h2 className="gnome__name">{name}</h2>
         <img className="gnome__image" src={image} alt={name} />
 
+        <div className="gnome__details">
+          <p>{age}</p>
+          <p>{roundedHeight}</p>
+          <p>{roundedWeight}</p>
+          <p>{hair_color}</p>
+        </div>
+        
         <List 
         professions={professions}
         friends={friends} />
 
-        <div className="gnome__details">
-          <p>{age}</p>
-          <p>Height {roundedHeight}</p>
-          <p>Weight {roundedWeight}</p>
-          <p>{hair_color}</p>
-        </div>
+
       </div>
     );
   }

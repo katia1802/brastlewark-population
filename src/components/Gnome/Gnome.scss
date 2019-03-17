@@ -1,0 +1,32 @@
+.gnome__image {
+    width: 75%;
+    height: 35%;
+    border-radius: 5%;
+    margin-top: 15%;
+    float: right;
+}
+
+.gnome__card{
+    height: 525px;
+    background-color: #F9EBFF;
+}
+
+.gnome__name {
+    margin-top:10%;
+    background: white;
+}
+
+.gnome__details{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 5px;
+    margin-top: 35%;
+}
+
+.gnome__lists{
+    display: grid;
+    grid-template-columns: repeat(2, 120px);
+    justify-content: center;
+    margin-top: 20%;
+}
