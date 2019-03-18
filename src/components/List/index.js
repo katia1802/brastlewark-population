@@ -24,7 +24,11 @@ class List extends Component {
           professions.map ((profession,index)=>{
             return <li key={index}>{profession}</li>;
           })
-          :<FontAwesomeIcon icon="frown" />
+          :
+          <div>
+          <p>No friends found</p>
+          <FontAwesomeIcon icon="frown" />
+          </div>
           }
           </ul>
         </div>
