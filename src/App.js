@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       gnomesRawData: [],
       search: "",
-      isLoading: true
+      isLoading: true,
     };
     this.getInputSearch = this.getInputSearch.bind(this);
     this.filterByFullName();

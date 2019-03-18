@@ -34,5 +34,19 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "homepage": "./"
+  "homepage": "http://./",
+  "description": "How to use this repo",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katia1802/brastlewark-population.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katia1802/brastlewark-population/issues"
+  }
 }
