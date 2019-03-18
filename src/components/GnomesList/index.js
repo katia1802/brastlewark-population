@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./GnomesList.scss";
 import Gnome from '../Gnome'
+import PropTypes from 'prop-types';
 
 class GnomesList extends Component {
   render() {
@@ -40,5 +41,9 @@ class GnomesList extends Component {
     )};
   }
 }
+GnomesList.propTypes = {
+  gnomesResults: PropTypes.arrayOf(PropTypes.object).isRequired,
+}
+
 
 export default GnomesList;

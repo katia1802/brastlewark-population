@@ -3,6 +3,8 @@ import "./List.scss";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFrown} from "@fortawesome/free-solid-svg-icons";
+import PropTypes from 'prop-types';
+
 
 library.add(faFrown);
 
@@ -41,5 +43,11 @@ class List extends Component {
     );
   }
 }
+
+List.propTypes = {
+  professions: PropTypes.arrayOf(PropTypes.object).isRequired,
+  friends: PropTypes.arrayOf(PropTypes.object).isRequired,
+}
+
 
 export default List;

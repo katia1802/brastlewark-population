@@ -5,6 +5,8 @@ import "./Gnome.scss";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRuler, faWeight, faHeartbeat, faPalette} from "@fortawesome/free-solid-svg-icons";
+import PropTypes from 'prop-types';
+
 
 library.add(faRuler, faWeight, faHeartbeat, faPalette);
 
@@ -47,5 +49,16 @@ class Gnome extends Component {
     );
   }
 }
+Gnome.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.number.isRequired,
+  professions: PropTypes.array.isRequired,
+  friends: PropTypes.array.isRequired,
+  age: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  weight: PropTypes.number.isRequired,
+  hair_color: PropTypes.string.isRequired,
+}
+
 
 export default Gnome;
