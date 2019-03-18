@@ -6,11 +6,13 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "gh": "^1.17.2",
     "gh-pages": "^2.0.1",
     "i": "^0.3.6",
     "lodash.round": "^4.0.4",
     "node-sass": "^4.11.0",
     "npm": "^6.9.0",
+    "pages": "0.0.16",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
@@ -19,6 +21,8 @@
     "react-scripts": "2.1.8"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -33,5 +37,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "homepage": "./"
+  "homepage": "https://katia1802.github.io/brastlewark-population"
 }
