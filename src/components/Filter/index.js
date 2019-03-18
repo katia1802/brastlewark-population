@@ -6,7 +6,7 @@ class Filter extends Component {
     const { onKeySearch, userSearch } = this.props;
     return (
       <div className="app__filter-item">
-        <label for="input" className="input">
+        <label htmlFor="input" className="input">
           <input
             className="app__filter-fullname"
             placeholder="Search for your gnome"
