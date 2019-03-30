@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-import GoBack from '../GoBack';
+import GoBack from "../GoBack";
+import "../GnomeCard/GnomeCard.scss";
+import List from "../List";
 
 class GnomeCard extends Component {
   render() {
@@ -23,17 +25,31 @@ class GnomeCard extends Component {
 
       return (
         <Fragment>
-        <div>
-          <img src={image} alt={fullname} />
-          <h2>{fullname}</h2>
-          <div>{age}</div>
-          <div>{professions}</div>
-          <div>{friends}</div>
-          <div>{height}</div>
-          <div>{weight}</div>
-          <div>{haircolor}</div>
-        </div>
-        <GoBack />
+          <div className="selectedGnome__card">
+            <h2 className="selectedGnome__name">{fullname}</h2>
+            <div className="selectedGnome_info">
+              <img
+                className="selectedGnome__image"
+                src={image}
+                alt={fullname}
+              />
+              <div className="selectedGnome_details">
+                <div className="selectedGnome_age">Age: {age}</div>
+                {/* <div className="selectedGnome_professions">{professions}</div>
+          <div className="selectedGnome_friends">{friends}</div> */}
+
+                <div className="selectedGnome_height">Height: {height}</div>
+                <div className="selectedGnoome_weight">Weight: {weight}</div>
+                <div className="selectedGnome_hair_color">
+                  Hair Color: {haircolor}
+                </div>
+              </div>
+              <List professions={professions} friends={friends} />
+              <GoBack />
+
+            </div>
+
+          </div>
         </Fragment>
       );
     }

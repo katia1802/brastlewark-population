@@ -16,8 +16,8 @@ class Gnome extends Component {
     const {
       name,
       image,
-      professions,
-      friends,
+      // professions,
+      // friends,
       age,
       height,
       weight,
@@ -43,7 +43,7 @@ class Gnome extends Component {
             <p><FontAwesomeIcon icon="palette" /> {hair_color}</p>
           </div>
 
-          <List professions={professions} friends={friends} />
+          {/* <List professions={professions} friends={friends} /> */}
         </div>
       </div>
     );
