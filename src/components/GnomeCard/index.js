@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
+import GoBack from '../GoBack';
 
 class GnomeCard extends Component {
   render() {
@@ -21,6 +22,7 @@ class GnomeCard extends Component {
       const haircolor = selectedGnome.haircolor;
 
       return (
+        <Fragment>
         <div>
           <img src={image} alt={fullname} />
           <h2>{fullname}</h2>
@@ -31,6 +33,8 @@ class GnomeCard extends Component {
           <div>{weight}</div>
           <div>{haircolor}</div>
         </div>
+        <GoBack />
+        </Fragment>
       );
     }
   }

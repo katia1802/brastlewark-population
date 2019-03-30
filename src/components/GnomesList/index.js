@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./GnomesList.scss";
 import Gnome from "../Gnome";
+import GoBack from "../GoBack";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
@@ -10,6 +11,8 @@ class GnomesList extends Component {
     if (gnomesResults.length === 0) {
       return (
         <div className="gnome__notfound">
+          <GoBack />
+
           <p className="gnome__notfound-text">No gnome found</p>
           <img
             alt="noFoundGnome"
@@ -23,7 +26,7 @@ class GnomesList extends Component {
           {gnomesResults.map((item, index) => {
             return (
               <li className="gnome glowButton" key={index}>
-                <Link className= "gnome-link" to={`/gnome/${item.id}`}>
+                <Link className="gnome-link" to={`/gnome/${item.id}`}>
                   <Gnome
                     name={item.name}
                     image={item.thumbnail}
