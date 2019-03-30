@@ -3,6 +3,8 @@ import { createPromise } from "./services/gnomeService";
 import GnomesList from "./components/GnomesList";
 import Filter from "./components/Filter";
 import Loader from "./components/Loader";
+import GnomeCard from "./components/GnomeCard";
+import { Switch, Route } from "react-router-dom";
 import "./App.scss";
 
 class App extends Component {
@@ -12,7 +14,7 @@ class App extends Component {
     this.state = {
       gnomesRawData: [],
       search: "",
-      isLoading: true,
+      isLoading: true
     };
     this.getInputSearch = this.getInputSearch.bind(this);
     this.filterByFullName();
@@ -21,7 +23,6 @@ class App extends Component {
   componentDidMount() {
     createPromise().then(data => {
       const rawData = data.Brastlewark;
-
       setTimeout(
         () =>
           this.setState({
@@ -73,26 +74,54 @@ class App extends Component {
 
   render() {
     const gnomesResults = this.filterByFullName();
+    const {gnomesRawData} = this.state;
+    console.log("holi",gnomesRawData);
 
     return (
       <div className="app__welcoming">
-
         <header className="app__header">
           <h1 className="app__header-title">Brastlewark Population</h1>
-
-          <Filter
-            onKeySearch={this.getInputSearch}
-            userSearch={this.state.search}
-          />
+          <Switch>
+            <Route
+              exact
+              path="/" // hace que se pinte sólo en la home y no en el GnomeCard
+              render={() => (
+                <Filter
+                  onKeySearch={this.getInputSearch}
+                  userSearch={this.state.search}
+                />
+              )}
+            />
+          </Switch>
         </header>
-        <main>
-          <div className="app__main">
-            {this.state.isLoading ? (
-              <Loader />
-            ) : (
-              <GnomesList gnomesResults={gnomesResults} />
-            )}
-          </div>
+        <main className="app__main">
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <div className="app__list">
+                  {this.state.isLoading ? (
+                    <Loader />
+                  ) : (
+                    <GnomesList gnomesResults={gnomesResults} />
+                  )}
+                </div>
+              )}
+            />
+
+            <Route
+              exact
+              path="/gnome/:id"
+              render={props => (
+                <GnomeCard
+                  match={props.match}
+                  gnomesRawData={gnomesRawData}
+                  gnomeId={1}
+                />
+              )}
+            />
+          </Switch>
         </main>
       </div>
     );

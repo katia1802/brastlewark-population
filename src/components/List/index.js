@@ -49,8 +49,8 @@ class List extends Component {
 }
 
 List.propTypes = {
-  professions: PropTypes.arrayOf(PropTypes.object).isRequired,
-  friends: PropTypes.arrayOf(PropTypes.object).isRequired,
+  professions: PropTypes.array.isRequired,
+  friends: PropTypes.array.isRequired,
 }
 
 

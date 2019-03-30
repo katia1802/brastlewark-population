@@ -24,3 +24,9 @@
     margin-top: 20px;
     height: 100%;
 }
+
+@media all and (min-width: 1200px) {
+    .app__header-title {
+        padding-top: 10%;
+    }
+}

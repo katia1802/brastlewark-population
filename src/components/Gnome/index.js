@@ -51,7 +51,7 @@ class Gnome extends Component {
 }
 Gnome.propTypes = {
   name: PropTypes.string.isRequired,
-  image: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
   professions: PropTypes.array.isRequired,
   friends: PropTypes.array.isRequired,
   age: PropTypes.number.isRequired,
