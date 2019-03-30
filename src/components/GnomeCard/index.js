@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class GnomeCard extends Component {
   render() {
@@ -17,19 +18,26 @@ class GnomeCard extends Component {
       const age = selectedGnome.age;
       const height = selectedGnome.height;
       const weight = selectedGnome.weight;
+      const haircolor = selectedGnome.haircolor;
 
-      return (<div> 
-        <img src={image} alt= {fullname}/>
-        <h2>{fullname}</h2>
-        <div>{age}</div>
-        <div>{professions}</div>
-        <div>{friends}</div>
-        <div>{height}</div>
-        <div>{weight}</div>
-
-      </div>)
+      return (
+        <div>
+          <img src={image} alt={fullname} />
+          <h2>{fullname}</h2>
+          <div>{age}</div>
+          <div>{professions}</div>
+          <div>{friends}</div>
+          <div>{height}</div>
+          <div>{weight}</div>
+          <div>{haircolor}</div>
+        </div>
+      );
     }
   }
 }
+
+GnomeCard.propTypes = {
+  match: PropTypes.object.isRequired
+};
 
 export default GnomeCard;
